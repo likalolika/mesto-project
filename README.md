@@ -1,7 +1,4 @@
 # Проект: Место
-https://likalolika.github.io/mesto-project/
-
-# Проект: Место
 Проект опубликован на GitHub Pages _посмотрите_
 https://likalolika.github.io/mesto-project/
 ### Описание проекта
