@@ -1,0 +1,27 @@
+.grid-block {
+    width: calc(100% - 2 * 200px);
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 17px;
+}
+
+@media screen and (max-width: 1175px) {
+    .grid-block {
+        grid-template-columns: repeat(2, 1fr);
+        width: calc(100% - 2 * 150px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .grid-block {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 591px) {
+    .grid-block {
+        width: calc(100% - 2 * 19px);
+    }
+}

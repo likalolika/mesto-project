@@ -1,0 +1,26 @@
+.grid-block__title {
+    max-width: 200px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+    margin-left: 21px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1220px) {
+    .grid-block__title {
+        max-width: 160px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .grid-block__title {
+        max-width: 200px;
+    }
+}

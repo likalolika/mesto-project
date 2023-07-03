@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <a href="#"
+        ><img
+          class="header__logo"
+          src="./images/logo.svg"
+          alt="место россия логотип"
+      /></a>
+    </header>
+    <main>
+      <section class="profile">
+        <div class="profile__info">
+          <img
+            class="profile__image"
+            src="./images/profile_image.jpg"
+            alt="жак-ив кусто"
+          />
+          <div>
+            <div class="profile__name-wrap">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit-button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+        </div>
+        <button type="button" class="profile__add-button">
+          <img
+            class="profile__image-add"
+            src="./images/icon__add.svg"
+            alt="добавить"
+          />
+        </button>
+      </section>
+      <section class="grid-block">
+        <div class="grid-block__elem">
+          <img
+            class="grid-block__image"
+            src="./images/kirill-pershin-1088404-unsplash.jpg"
+            alt="церковь в горах карачаево-черкессии"
+          />
+          <div class="grid-block__info">
+            <h3 class="grid-block__title">Карачаевск</h3>
+            <button
+              type="button"
+              class="grid-block__button grid-block__button_active"
+            ></button>
+          </div>
+        </div>
+        <div class="grid-block__elem">
+          <img
+            class="grid-block__image"
+            src="./images/kirill-pershin-1404681-unsplash.png"
+            alt="закат в горах на кавказе"
+          />
+          <div class="grid-block__info">
+            <h3 class="grid-block__title">Гора Эльбрус</h3>
+            <button
+              type="button"
+              class="grid-block__button grid-block__button_active"
+            ></button>
+          </div>
+        </div>
+        <div class="grid-block__elem">
+          <img
+            class="grid-block__image"
+            src="./images/kirill-pershin-1556355-unsplash.png"
+            alt="горный пейзаж леса"
+          />
+          <div class="grid-block__info">
+            <h3 class="grid-block__title">Домбай</h3>
+            <button
+              type="button"
+              class="grid-block__button grid-block__button_active"
+            ></button>
+          </div>
+        </div>
+        <div class="grid-block__elem">
+          <img
+            class="grid-block__image"
+            src="./images/kirill-pershin-1404681-unsplash.png"
+            alt="закат в горах на кавказе"
+          />
+          <div class="grid-block__info">
+            <h3 class="grid-block__title">Гора Эльбрус</h3>
+            <button
+              type="button"
+              class="grid-block__button grid-block__button_active"
+            ></button>
+          </div>
+        </div>
+        <div class="grid-block__elem">
+          <img
+            class="grid-block__image"
+            src="./images/kirill-pershin-1556355-unsplash.png"
+            alt="леса на горных склонах"
+          />
+          <div class="grid-block__info">
+            <h3 class="grid-block__title">Домбай</h3>
+            <button
+              type="button"
+              class="grid-block__button grid-block__button_active"
+            ></button>
+          </div>
+        </div>
+        <div class="grid-block__elem">
+          <img
+            class="grid-block__image"
+            src="./images/kirill-pershin-1088404-unsplash.jpg"
+            alt="церковь в горах карачаево-черкессии"
+          />
+          <div class="grid-block__info">
+            <p class="grid-block__title">Карачаево-Черкессия</p>
+            <button
+              type="button"
+              class="grid-block__button grid-block__button_active"
+            ></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_open">
+      <div class="popup__container">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form">
+          <label class="popup__area">
+            <input
+              type="text"
+              class="popup__input"
+              placeholder="Жак-Ив Кусто"
+              required
+            />
+          </label>
+          <label class="popup__area">
+            <input
+              type="text"
+              class="popup__input"
+              placeholder="Исследователь океана"
+              required
+            />
+          </label>
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+        <button class="popup__close-button" type="button"></button>
+      </div>
+    </div>
+  </body>
+</html>
