@@ -3,9 +3,13 @@
     height: 50px;
     cursor: pointer;
     padding: 0;
+    background-image: url('../../../images/icon__add.svg');
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: transparent;
     border: 1px solid #fff;
     margin-top: 5px;
+    border-radius: 2px;
 }
 
 .profile__add-button:hover {
@@ -16,6 +20,7 @@
     .profile__add-button {
         margin-top: 47px;
         width: 68%;
+        background-size: 5%;
     }
 }
 

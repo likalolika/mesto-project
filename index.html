@@ -31,13 +31,7 @@
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <button type="button" class="profile__add-button">
-          <img
-            class="profile__image-add"
-            src="./images/icon__add.svg"
-            alt="добавить"
-          />
-        </button>
+        <button type="button" class="profile__add-button"></button>
       </section>
       <section class="grid-block">
         <div class="grid-block__elem">
@@ -47,7 +41,7 @@
             alt="церковь в горах карачаево-черкессии"
           />
           <div class="grid-block__info">
-            <h3 class="grid-block__title">Карачаевск</h3>
+            <h2 class="grid-block__title">Карачаевск</h2>
             <button
               type="button"
               class="grid-block__button grid-block__button_active"
@@ -61,7 +55,7 @@
             alt="закат в горах на кавказе"
           />
           <div class="grid-block__info">
-            <h3 class="grid-block__title">Гора Эльбрус</h3>
+            <h2 class="grid-block__title">Гора Эльбрус</h2>
             <button
               type="button"
               class="grid-block__button grid-block__button_active"
@@ -75,7 +69,7 @@
             alt="горный пейзаж леса"
           />
           <div class="grid-block__info">
-            <h3 class="grid-block__title">Домбай</h3>
+            <h2 class="grid-block__title">Домбай</h2>
             <button
               type="button"
               class="grid-block__button grid-block__button_active"
@@ -89,7 +83,7 @@
             alt="закат в горах на кавказе"
           />
           <div class="grid-block__info">
-            <h3 class="grid-block__title">Гора Эльбрус</h3>
+            <h2 class="grid-block__title">Гора Эльбрус</h2>
             <button
               type="button"
               class="grid-block__button grid-block__button_active"
@@ -103,7 +97,7 @@
             alt="леса на горных склонах"
           />
           <div class="grid-block__info">
-            <h3 class="grid-block__title">Домбай</h3>
+            <h2 class="grid-block__title">Домбай</h3>
             <button
               type="button"
               class="grid-block__button grid-block__button_active"
@@ -117,7 +111,7 @@
             alt="церковь в горах карачаево-черкессии"
           />
           <div class="grid-block__info">
-            <p class="grid-block__title">Карачаево-Черкессия</p>
+            <h2 class="grid-block__title">Карачаево-Черкессия</h2>
             <button
               type="button"
               class="grid-block__button grid-block__button_active"
@@ -129,15 +123,16 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
-    <div class="popup popup_open">
+    <div class="popup">
       <div class="popup__container">
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form">
+        <form class="popup__form" name="ProfileEditForm"> 
           <label class="popup__area">
             <input
               type="text"
               class="popup__input"
-              placeholder="Жак-Ив Кусто"
+              name="name"
+              placeholder="Имя"
               required
             />
           </label>
@@ -145,7 +140,8 @@
             <input
               type="text"
               class="popup__input"
-              placeholder="Исследователь океана"
+              name="activity"
+              placeholder="Занятие"
               required
             />
           </label>

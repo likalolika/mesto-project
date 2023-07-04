@@ -2,6 +2,7 @@
     width: 24px;
     height: 24px;
     background-image: url('../../../images/icon__edit.svg');
+    background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -11,7 +12,6 @@
 }
 
 .profile__edit-button:hover {
-    background-image: url("../../../images/Edit Button_hover.png");
     opacity: 0.6;
 }
 

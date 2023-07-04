@@ -3,7 +3,7 @@
     margin: 45px auto 36px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-color: #545454;
+    border-color: rgba(54, 54, 54, .6);
 }
 
 @media screen and (max-width: 989px) {

@@ -1,4 +1,8 @@
 .profile__name-wrap {
     display: flex;
+    max-width: 422px;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
