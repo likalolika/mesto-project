@@ -13,6 +13,6 @@
         font-size: 18px;
         width: calc(100% - 2 * 22);
         text-align: center;
-
+        padding-top: 25px;
     }
 }
