@@ -6,7 +6,6 @@
     line-height: normal;
     padding: 0;
     margin: 8px 0 8px;
-    letter-spacing: 0.6px;
     margin-left: 30px;
     width: 272px;
     white-space: nowrap;
@@ -18,12 +17,14 @@
     .profile__subtitle {
         margin-top: 14px;
         font-size: 14px;
+        width: 189px;
     }
 }
 
 @media screen and (max-width: 479px) {
     .profile__subtitle {
         text-align: center;
-        margin-left: 0;
+        margin-left: 29px;
+        margin-top: 6px;
     }
 }

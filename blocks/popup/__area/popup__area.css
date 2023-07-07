@@ -1,8 +1,13 @@
 .popup__area {
     display: flex;
     flex-direction: column;
+    padding-bottom: 13px;
+    margin: 0 36px 17px;
+
 }
 
-.popup__area:first-child {
-    margin-bottom: 30px;
+@media screen and (max-width: 510px) {
+    .popup__area {
+        margin: 0 0 12px;
+    }
 }

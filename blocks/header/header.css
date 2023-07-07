@@ -3,7 +3,7 @@
     margin: 45px auto 36px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-color: rgba(54, 54, 54, .6);
+    border-color: rgba(54, 54, 54, .7);
 }
 
 @media screen and (max-width: 989px) {
@@ -15,6 +15,6 @@
 @media screen and (max-width: 479px) {
     .header {
         width: 100%;
-        margin: 28px 0 38px;
+        margin: 28px 0 24px;
     }
 }
