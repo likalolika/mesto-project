@@ -112,18 +112,18 @@
           <label class="popup__area">
             <input
               type="text"
-              class="popup__input"
+              class="popup__input popup__input-name"
               name="name"
-              placeholder="Имя"
+              placeholder="Жак-Ив Кусто"
               required
             />
           </label>
           <label class="popup__area">
             <input
               type="text"
-              class="popup__input"
+              class="popup__input popup__input-job"
               name="activity"
-              placeholder="Занятие"
+              placeholder="Исследователь океана"
               required
             />
           </label>
@@ -132,5 +132,19 @@
         <button class="popup__close-button" type="button"></button>
       </div>
     </div>
+
+    <template id="card-template">
+      <div class="grid-block__elem card-template__elem">
+        <img
+          class="grid-block__image card-template__image"
+          alt="карточка с фотографией природы России"
+        />
+        <div class="grid-block__info">
+          <h2 class="grid-block__title card-template__title"></h2>
+          <button type="button" class="grid-block__button"></button>
+        </div>
+      </div>
+    </template>
+    <script src="/script.js"></script>
   </body>
 </html>
