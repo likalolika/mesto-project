@@ -109,42 +109,62 @@
       <div class="popup__container">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="ProfileEditForm">
-          <label class="popup__area">
-            <input
+          <label class="popup__area"
+            ><input
               type="text"
               class="popup__input popup__input-name"
               name="name"
               placeholder="Жак-Ив Кусто"
-              required
-            />
-          </label>
-          <label class="popup__area">
-            <input
+              required /></label
+          ><label class="popup__area"
+            ><input
               type="text"
               class="popup__input popup__input-job"
               name="activity"
               placeholder="Исследователь океана"
-              required
-            />
-          </label>
-          <button class="popup__save-button" type="submit">Сохранить</button>
+              required /></label
+          ><button class="popup__save-button" type="submit">Сохранить</button>
         </form>
         <button class="popup__close-button" type="button"></button>
       </div>
     </div>
-
-    <template id="card-template">
-      <div class="grid-block__elem card-template__elem">
+    <div class="card-popup">
+      <div class="card-popup__container">
+        <h3 class="card-popup__title">Новое место</h3>
+        <form class="card-popup__form" name="CardAddForm">
+          <label class="card-popup__area"
+            ><input
+              type="text"
+              class="card-popup__input card-popup__input-place"
+              name="place"
+              placeholder="Название"
+              required /></label
+          ><label class="card-popup__area"
+            ><input
+              type="text"
+              class="card-popup__input card-popup__input-link"
+              name="link"
+              placeholder="Ссылка на картинку"
+              required /></label
+          ><button class="card-popup__save-button" type="submit">
+            Сохранить
+          </button>
+        </form>
+        <button class="card-popup__close-button" type="button"></button>
+      </div>
+    </div>
+    <template id="card-template"
+      ><div class="grid-block__elem card-template__elem">
         <img
           class="grid-block__image card-template__image"
+          src=""
           alt="карточка с фотографией природы России"
         />
         <div class="grid-block__info">
           <h2 class="grid-block__title card-template__title"></h2>
           <button type="button" class="grid-block__button"></button>
-        </div>
-      </div>
-    </template>
-    <script src="/script.js"></script>
+        </div></div
+    ></template>
+    <script src="script.js"></script>
   </body>
 </html>
