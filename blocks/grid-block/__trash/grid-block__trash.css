@@ -1,0 +1,9 @@
+.grid-block__trash {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.grid-block__trash:hover {
+    opacity: 0.6;
+}
