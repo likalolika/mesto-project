@@ -17,3 +17,4 @@ https://likalolika.github.io/mesto-project/
 - Адаптивная верстка с помощью Flexbox, GridLayout и медиа-запросов
 - PixelPerfect
 - Figma
+- Java Script

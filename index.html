@@ -26,81 +26,22 @@
           <div>
             <div class="profile__name-wrap">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button type="button" class="profile__edit-button"></button>
+              <button
+                type="button"
+                class="profile__edit-button"
+                onclick="openModal('popup', 'popup_opened')"
+              ></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <button type="button" class="profile__add-button"></button>
+        <button
+          type="button"
+          class="profile__add-button"
+          onclick="openModal('card-popup', 'card-popup_opened')"
+        ></button>
       </section>
-      <section class="grid-block">
-        <div class="grid-block__elem">
-          <img
-            class="grid-block__image"
-            src="./images/kirill-pershin-1088404-unsplash.jpg"
-            alt="церковь в горах карачаево-черкессии"
-          />
-          <div class="grid-block__info">
-            <h2 class="grid-block__title">Карачаевск</h2>
-            <button type="button" class="grid-block__button"></button>
-          </div>
-        </div>
-        <div class="grid-block__elem">
-          <img
-            class="grid-block__image"
-            src="./images/kirill-pershin-1404681-unsplash.png"
-            alt="закат в горах на кавказе"
-          />
-          <div class="grid-block__info">
-            <h2 class="grid-block__title">Гора Эльбрус</h2>
-            <button type="button" class="grid-block__button"></button>
-          </div>
-        </div>
-        <div class="grid-block__elem">
-          <img
-            class="grid-block__image"
-            src="./images/kirill-pershin-1556355-unsplash.png"
-            alt="горный пейзаж леса"
-          />
-          <div class="grid-block__info">
-            <h2 class="grid-block__title">Домбай</h2>
-            <button type="button" class="grid-block__button"></button>
-          </div>
-        </div>
-        <div class="grid-block__elem">
-          <img
-            class="grid-block__image"
-            src="./images/kirill-pershin-1404681-unsplash.png"
-            alt="закат в горах на кавказе"
-          />
-          <div class="grid-block__info">
-            <h2 class="grid-block__title">Гора Эльбрус</h2>
-            <button type="button" class="grid-block__button"></button>
-          </div>
-        </div>
-        <div class="grid-block__elem">
-          <img
-            class="grid-block__image"
-            src="./images/kirill-pershin-1556355-unsplash.png"
-            alt="леса на горных склонах"
-          />
-          <div class="grid-block__info">
-            <h2 class="grid-block__title">Домбай</h2>
-            <button type="button" class="grid-block__button"></button>
-          </div>
-        </div>
-        <div class="grid-block__elem">
-          <img
-            class="grid-block__image"
-            src="./images/kirill-pershin-1088404-unsplash.jpg"
-            alt="церковь в горах карачаево-черкессии"
-          />
-          <div class="grid-block__info">
-            <h2 class="grid-block__title">Карачаево-Черкессия</h2>
-            <button type="button" class="grid-block__button"></button>
-          </div>
-        </div>
-      </section>
+      <section class="grid-block"></section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
@@ -123,9 +64,15 @@
               name="activity"
               placeholder="Исследователь океана"
               required /></label
-          ><button class="popup__save-button" type="submit">Сохранить</button>
+          ><button class="popup__save-button" onclick="formSaveProfile(event)">
+            Сохранить
+          </button>
         </form>
-        <button class="popup__close-button" type="button"></button>
+        <button
+          class="popup__close-button"
+          type="button"
+          onclick="closeModal('popup','popup_opened')"
+        ></button>
       </div>
     </div>
     <div class="card-popup">
@@ -146,16 +93,28 @@
               name="link"
               placeholder="Ссылка на картинку"
               required /></label
-          ><button class="card-popup__save-button" type="submit">
+          ><button
+            class="card-popup__save-button"
+            type="submit"
+            onclick="addCardBuutton(event)"
+          >
             Сохранить
           </button>
         </form>
-        <button class="card-popup__close-button" type="button"></button>
+        <button
+          class="card-popup__close-button"
+          onclick="closeModal('card-popup', 'card-popup_opened')"
+          type="button"
+        ></button>
       </div>
     </div>
     <template id="card-template"
       ><div class="grid-block__elem card-template__elem">
         <img
+          class="grid-block__trash"
+          src="/images/Trash.svg"
+          alt="кнопка для удаления картинки"
+        /><img
           class="grid-block__image card-template__image"
           src=""
           alt="карточка с фотографией природы России"
@@ -165,6 +124,17 @@
           <button type="button" class="grid-block__button"></button>
         </div></div
     ></template>
+    <div class="popup-show-image">
+      <div class="popup-show-image__container">
+        <button class="popup-show-image__close-button"></button
+        ><img
+          class="popup-show-image__image"
+          src=""
+          alt="увеличение выбранного фото"
+        />
+        <p class="popup-show-image__title"></p>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
