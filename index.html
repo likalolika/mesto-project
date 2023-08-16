@@ -26,20 +26,12 @@
           <div>
             <div class="profile__name-wrap">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button
-                type="button"
-                class="profile__edit-button"
-                onclick="openModal('popup', 'popup_opened')"
-              ></button>
+              <button type="button" class="profile__edit-button"></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <button
-          type="button"
-          class="profile__add-button"
-          onclick="openModal('card-popup', 'card-popup_opened')"
-        ></button>
+        <button type="button" class="profile__add-button"></button>
       </section>
       <section class="grid-block"></section>
     </main>
@@ -64,15 +56,9 @@
               name="activity"
               placeholder="Исследователь океана"
               required /></label
-          ><button class="popup__save-button" onclick="formSaveProfile(event)">
-            Сохранить
-          </button>
+          ><button type="submit" class="popup__save-button">Сохранить</button>
         </form>
-        <button
-          class="popup__close-button"
-          type="button"
-          onclick="closeModal('popup','popup_opened')"
-        ></button>
+        <button class="popup__close-button" type="button"></button>
       </div>
     </div>
     <div class="card-popup">
@@ -93,19 +79,11 @@
               name="link"
               placeholder="Ссылка на картинку"
               required /></label
-          ><button
-            class="card-popup__save-button"
-            type="submit"
-            onclick="addCardBuutton(event)"
-          >
+          ><button class="card-popup__save-button" type="submit">
             Сохранить
           </button>
         </form>
-        <button
-          class="card-popup__close-button"
-          onclick="closeModal('card-popup', 'card-popup_opened')"
-          type="button"
-        ></button>
+        <button class="card-popup__close-button" type="button"></button>
       </div>
     </div>
     <template id="card-template"
@@ -114,11 +92,7 @@
           class="grid-block__trash"
           src="/images/Trash.svg"
           alt="кнопка для удаления картинки"
-        /><img
-          class="grid-block__image card-template__image"
-          src=""
-          alt="карточка с фотографией природы России"
-        />
+        /><img class="grid-block__image card-template__image" src="" alt="" />
         <div class="grid-block__info">
           <h2 class="grid-block__title card-template__title"></h2>
           <button type="button" class="grid-block__button"></button>
