@@ -59,7 +59,14 @@ const cardsContainer = document.querySelector(".grid-block");
 const cardsTemplate = document.querySelector("#card-template").content;
 const templateElem = cardsTemplate.querySelector(".card-template__elem");
 
-initialCards.forEach((item) => addCard(item.name, item.link));
+function renderCard() {
+  initialCards.forEach((item) => {
+    let card = addCard(item.name, item.link);
+    cardsContainer.prepend(card);
+  });
+}
+
+renderCard();
 
 function addCard(name, link) {
   const templateElemCopy = templateElem.cloneNode(true);
@@ -71,22 +78,16 @@ function addCard(name, link) {
   templateTitle.textContent = name;
   templateImage.setAttribute("alt", name);
 
-  templateTrash.onclick = removeCard;
-  templateLike.onclick = likeBtn;
-
-  function likeBtn(evt) {
-    let target = evt.target;
-    target.classList.toggle("grid-block__button_active");
-    /*if (target.style.backgroundImage.includes("like_active")) {
-      target.style.backgroundImage = "url(./images/icon__like.svg)";
-    } else {
-      target.style.backgroundImage = "url(./images/icon__like_active.svg)";
-    }*/
-  }
-
-  cardsContainer.prepend(templateElemCopy);
-
+  templateTrash.addEventListener("click", (evt) => removeCard(evt));
+  templateLike.addEventListener("click", (evt) => likeBtn(evt));
   templateImage.addEventListener("click", (evt) => showImg(evt));
+
+  return templateElemCopy;
+}
+
+function likeBtn(evt) {
+  let target = evt.target;
+  target.classList.toggle("grid-block__button_active");
 }
 
 /*Открытие и закрытие popup*/
@@ -116,20 +117,6 @@ closeBtnProfile.addEventListener("click", () => closeModal(popupProfile));
 addButton.addEventListener("click", () => openModal(popupAddCard));
 closeBtnCard.addEventListener("click", () => closeModal(popupAddCard));
 
-/*function openModal(modalClass, modalActiveClass) {
-  popup = document.querySelector(`.${modalClass}
-
-    `);
-  popup.classList.add(modalActiveClass);
-}
-
-function closeModal(modalClass, modalActiveClass) {
-  popup = document.querySelector(`.${modalClass}
-
-    `);
-  popup.classList.remove(modalActiveClass);
-}*/
-
 /*Сохранение*/
 
 const formElement = document.querySelector(".popup__container");
@@ -156,7 +143,6 @@ function formSaveProfile(event) {
 }
 
 form.addEventListener("submit", (event) => formSaveProfile(event));
-// profileSaveBtn.addEventListener("submit", (event) => formSaveProfile(event));
 
 /*Сохранение карточки*/
 const formElem = document.querySelector(".card-popup__container");
@@ -170,35 +156,22 @@ function addCardButton(evt) {
   const linkVal = linkInput.value;
 
   if (placeVal.trim() !== "" && linkVal.trim() !== "") {
-    addCard(placeVal, linkVal);
+    let card = addCard(placeVal, linkVal);
+    cardsContainer.prepend(card);
     placeInput.value = "";
     linkInput.value = "";
     closeModal(popupAddCard);
-  } /*else {
-    placeInput.value = "";
-    linkInput.value = "";
-    closeModal(popupAddCard);
-  }*/
+  }
 }
 
 formElem.addEventListener("submit", (evt) => addCardButton(evt));
 
-/*лайк карточки*/
 
-/*function likeBtn(evt) {
-  let target = evt.target;
-
-  if (target.style.backgroundImage.includes("like_active")) {
-    target.style.backgroundImage = "url(./images/icon__like.svg)";
-  } else {
-    target.style.backgroundImage = "url(./images/icon__like_active.svg)";
-  }
-}*/
 
 /*удаление карточки*/
 
 function removeCard(evt) {
-  evt.target.parentNode.remove();
+  evt.target.closest(".card-template__elem").remove();
 }
 
 /*показать картинку*/
@@ -208,10 +181,8 @@ const imgTitle = document.querySelector(".popup-show-image__title");
 
 function showImg(evt) {
   openModal(popupShowImage);
-  const img = document.querySelector(".popup-show-image__image");
-  img.setAttribute("src", evt.target.src);
-  const imgTitle = document.querySelector(".popup-show-image__title");
 
+  img.setAttribute("src", evt.target.src);
   imgTitle.textContent = evt.target.alt;
 }
 
