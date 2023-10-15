@@ -61,14 +61,14 @@ const templateElem = cardsTemplate.querySelector(".card-template__elem");
 
 function renderCard() {
   initialCards.forEach((item) => {
-    let card = addCard(item.name, item.link);
+    const card = addCard(item.name, item.link);
     cardsContainer.prepend(card);
   });
 }
 
 renderCard();
 
-function addCard(name, link) {
+function addCard(name, link, removeCard) {
   const templateElemCopy = templateElem.cloneNode(true);
   const templateImage = templateElemCopy.querySelector(".card-template__image");
   const templateTitle = templateElemCopy.querySelector(".card-template__title");
@@ -81,6 +81,10 @@ function addCard(name, link) {
   templateTrash.addEventListener("click", (evt) => removeCard(evt));
   templateLike.addEventListener("click", (evt) => likeBtn(evt));
   templateImage.addEventListener("click", (evt) => showImg(evt));
+
+  function removeCard(evt) {
+    evt.target.closest(".card-template__elem").remove();
+  }
 
   return templateElemCopy;
 }
@@ -131,7 +135,7 @@ const profileSaveBtn = document.querySelector(
 );
 const form = document.querySelector(".popup__form_profile-edit");
 
-function formSaveProfile(event) {
+function saveProfileForm(event) {
   event.preventDefault();
 
   const nameVal = nameInput.value.trim();
@@ -146,7 +150,7 @@ function formSaveProfile(event) {
   closeModal(popupProfile);
 }
 
-form.addEventListener("submit", (event) => formSaveProfile(event));
+form.addEventListener("submit", (event) => saveProfileForm(event));
 
 /*Сохранение карточки*/
 const formElem = document.querySelector(".popup__container_add-card");
@@ -169,12 +173,6 @@ function addCardButton(evt) {
 }
 
 formElem.addEventListener("submit", (evt) => addCardButton(evt));
-
-/*удаление карточки*/
-
-function removeCard(evt) {
-  evt.target.closest(".card-template__elem").remove();
-}
 
 /*показать картинку*/
 
