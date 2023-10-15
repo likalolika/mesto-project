@@ -61,7 +61,7 @@ const templateElem = cardsTemplate.querySelector(".card-template__elem");
 
 function renderCard() {
   initialCards.forEach((item) => {
-    const card = addCard(item.name, item.link);
+    const card = addCard(item.name, item.link, removeCard);
     cardsContainer.prepend(card);
   });
 }
@@ -77,14 +77,11 @@ function addCard(name, link, removeCard) {
   templateImage.setAttribute("src", link);
   templateTitle.textContent = name;
   templateImage.setAttribute("alt", name);
+  templateTrash.addEventListener("click", removeCard);
 
-  templateTrash.addEventListener("click", (evt) => removeCard(evt));
+  /*templateTrash.addEventListener("click", (evt) => removeCard(evt));*/
   templateLike.addEventListener("click", (evt) => likeBtn(evt));
   templateImage.addEventListener("click", (evt) => showImg(evt));
-
-  function removeCard(evt) {
-    evt.target.closest(".card-template__elem").remove();
-  }
 
   return templateElemCopy;
 }
@@ -164,7 +161,7 @@ function addCardButton(evt) {
   const linkVal = linkInput.value;
 
   if (placeVal.trim() !== "" && linkVal.trim() !== "") {
-    let card = addCard(placeVal, linkVal);
+    let card = addCard(placeVal, linkVal, removeCard);
     cardsContainer.prepend(card);
     placeInput.value = "";
     linkInput.value = "";
@@ -189,3 +186,7 @@ function showImg(evt) {
 /*Закрыть  картинку*/
 
 closeBtnImage.addEventListener("click", () => closeModal(popupShowImage));
+
+function removeCard(evt) {
+  evt.target.closest(".card-template__elem").remove();
+}
