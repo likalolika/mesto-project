@@ -1,3 +1,18 @@
+import "./pages/index.css";
+
+const elbrusImage = new URL(
+  "./images/kirill-pershin-1404681-unsplash.png",
+  import.meta.url
+);
+const cherkesiaImage = new URL(
+  "./images/kirill-pershin-1088404-unsplash.jpg",
+  import.meta.url
+);
+const dombaiImage = new URL(
+  "./images/kirill-pershin-1556355-unsplash.png",
+  import.meta.url
+);
+
 const initialCards = [
   {
     name: "Архыз",
@@ -31,27 +46,27 @@ const initialCards = [
 
   {
     name: "Гора Эльбруc",
-    link: "./images/kirill-pershin-1404681-unsplash.png",
+    link: elbrusImage,
   },
 
   {
     name: "Домбай",
-    link: "./images/kirill-pershin-1556355-unsplash.png",
+    link: dombaiImage,
   },
 
   {
     name: "Гора Эльбрус",
-    link: "./images/kirill-pershin-1404681-unsplash.png",
+    link: elbrusImage,
   },
 
   {
     name: "Карачаево-Черкессия",
-    link: "./images/kirill-pershin-1088404-unsplash.jpg",
+    link: cherkesiaImage,
   },
 
   {
     name: "Домбай",
-    link: "./images/kirill-pershin-1556355-unsplash.png",
+    link: dombaiImage,
   },
 ];
 

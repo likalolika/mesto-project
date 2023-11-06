@@ -4,25 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="page">
     <header class="header">
       <a href="#"
-        ><img
-          class="header__logo"
-          src="./images/logo.svg"
-          alt="место россия логотип"
-      /></a>
+        ><img class="header__logo" src="<%=require("./images/logo.svg")%>"
+        alt="место россия логотип" /></a
+      >
     </header>
     <main>
       <section class="profile">
         <div class="profile__info">
-          <img
-            class="profile__image"
-            src="./images/profile_image.jpg"
-            alt="жак-ив кусто"
-          />
+          <img class="profile__image"
+          src="<%=require("./images/profile_image.jpg")%>" alt="жак-ив кусто" />
           <div>
             <div class="profile__name-wrap">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -97,11 +91,12 @@
     </div>
     <template id="card-template"
       ><div class="grid-block__elem card-template__elem">
-        <img
-          class="grid-block__trash"
-          src="./images/Trash.svg"
-          alt="кнопка для удаления картинки"
-        /><img class="grid-block__image card-template__image" src="" alt="" />
+        <img class="grid-block__trash" src="<%=require("./images/Trash.svg")%>"
+        alt="кнопка для удаления картинки" /><img
+          class="grid-block__image card-template__image"
+          src=""
+          alt=""
+        />
         <div class="grid-block__info">
           <h2 class="grid-block__title card-template__title"></h2>
           <button type="button" class="grid-block__button"></button>
@@ -116,6 +111,5 @@
         <p class="popup__description"></p>
       </div>
     </div>
-    <script src="./src/index.js"></script>
   </body>
 </html>
