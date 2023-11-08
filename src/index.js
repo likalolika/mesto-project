@@ -93,8 +93,6 @@ function addCard(name, link, removeCard) {
   templateTitle.textContent = name;
   templateImage.setAttribute("alt", name);
   templateTrash.addEventListener("click", removeCard);
-
-  /*templateTrash.addEventListener("click", (evt) => removeCard(evt));*/
   templateLike.addEventListener("click", (evt) => likeBtn(evt));
   templateImage.addEventListener("click", (evt) => showImg(evt));
 
@@ -121,12 +119,35 @@ const closeBtnImage = popupShowImage.querySelector(
   ".popup__close-button_show-image"
 );
 
+function closeModalOver(evt) {
+  if (evt.target.classList.contains("popup")) {
+    closeModal(evt.target);
+  }
+}
+
+function closeOnOverlay(popup) {
+  popup.addEventListener("click", closeModalOver);
+}
+
+closeOnOverlay(popupProfile);
+closeOnOverlay(popupAddCard);
+closeOnOverlay(popupShowImage);
+
+function esc(evt) {
+  if (evt.key === "Escape") {
+    const modalIsOpen = document.querySelector(".popup_opened");
+    modalIsOpen.classList.remove("popup_opened");
+  }
+}
+
 function openModal(popupName) {
   popupName.classList.add("popup_opened");
+  window.addEventListener("keydown", esc);
 }
 
 function closeModal(popupName) {
   popupName.classList.remove("popup_opened");
+  window.removeEventListener("keydown", esc);
 }
 
 editButton.addEventListener("click", () => openModal(popupProfile));
