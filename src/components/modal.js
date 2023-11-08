@@ -1,13 +1,11 @@
-/*import { esc } from "../index.js";
+import { esc } from "../index.js";
 
-function openModal(popupName) {
+export function openModal(popupName) {
   popupName.classList.add("popup_opened");
   window.addEventListener("keydown", esc);
 }
 
-function closeModal(popupName) {
+export function closeModal(popupName) {
   popupName.classList.remove("popup_opened");
   window.removeEventListener("keydown", esc);
 }
-
-export { openModal, closeModal };*/

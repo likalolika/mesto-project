@@ -1,5 +1,6 @@
 import "./pages/index.css";
-
+import { addCard, likeBtn, removeCard } from "./components/card.js";
+import { openModal, closeModal } from "./components/modal.js";
 const elbrusImage = new URL(
   "./images/kirill-pershin-1404681-unsplash.png",
   import.meta.url
@@ -70,9 +71,9 @@ const initialCards = [
   },
 ];
 
-const cardsContainer = document.querySelector(".grid-block");
-const cardsTemplate = document.querySelector("#card-template").content;
-const templateElem = cardsTemplate.querySelector(".card-template__elem");
+export const cardsContainer = document.querySelector(".grid-block");
+export const cardsTemplate = document.querySelector("#card-template").content;
+export const templateElem = cardsTemplate.querySelector(".card-template__elem");
 
 function renderCard() {
   initialCards.forEach((item) => {
@@ -82,27 +83,6 @@ function renderCard() {
 }
 
 renderCard();
-
-function addCard(name, link, removeCard) {
-  const templateElemCopy = templateElem.cloneNode(true);
-  const templateImage = templateElemCopy.querySelector(".card-template__image");
-  const templateTitle = templateElemCopy.querySelector(".card-template__title");
-  const templateTrash = templateElemCopy.querySelector(".grid-block__trash");
-  const templateLike = templateElemCopy.querySelector(".grid-block__button");
-  templateImage.setAttribute("src", link);
-  templateTitle.textContent = name;
-  templateImage.setAttribute("alt", name);
-  templateTrash.addEventListener("click", removeCard);
-  templateLike.addEventListener("click", (evt) => likeBtn(evt));
-  templateImage.addEventListener("click", (evt) => showImg(evt));
-
-  return templateElemCopy;
-}
-
-function likeBtn(evt) {
-  let target = evt.target;
-  target.classList.toggle("grid-block__button_active");
-}
 
 /*Открытие и закрытие popup*/
 
@@ -133,21 +113,11 @@ closeOnOverlay(popupProfile);
 closeOnOverlay(popupAddCard);
 closeOnOverlay(popupShowImage);
 
-function esc(evt) {
+export function esc(evt) {
   if (evt.key === "Escape") {
     const modalIsOpen = document.querySelector(".popup_opened");
     modalIsOpen.classList.remove("popup_opened");
   }
-}
-
-function openModal(popupName) {
-  popupName.classList.add("popup_opened");
-  window.addEventListener("keydown", esc);
-}
-
-function closeModal(popupName) {
-  popupName.classList.remove("popup_opened");
-  window.removeEventListener("keydown", esc);
 }
 
 editButton.addEventListener("click", () => openModal(popupProfile));
@@ -212,7 +182,7 @@ formElem.addEventListener("submit", (evt) => addCardButton(evt));
 const img = document.querySelector(".popup__image");
 const imgTitle = document.querySelector(".popup__description");
 
-function showImg(evt) {
+export function showImg(evt) {
   openModal(popupShowImage);
 
   img.setAttribute("src", evt.target.src);
@@ -222,7 +192,3 @@ function showImg(evt) {
 /*Закрыть  картинку*/
 
 closeBtnImage.addEventListener("click", () => closeModal(popupShowImage));
-
-function removeCard(evt) {
-  evt.target.closest(".card-template__elem").remove();
-}

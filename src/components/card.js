@@ -1,11 +1,9 @@
-/*import { templateElem, cardsContainer, initialCards } from "../index.js";
-
-function renderCard(arr) {
-  arr.forEach((item) => {
-    const card = addCard(item.name, item.link, removeCard);
-    cardsContainer.prepend(card);
-  });
-}
+import {
+  cardsContainer,
+  cardsTemplate,
+  templateElem,
+  showImg,
+} from "../index.js";
 
 function addCard(name, link, removeCard) {
   const templateElemCopy = templateElem.cloneNode(true);
@@ -32,4 +30,4 @@ function removeCard(evt) {
   evt.target.closest(".card-template__elem").remove();
 }
 
-export { renderCard, addCard, likeBtn, removeCard };*/
+export { addCard, likeBtn, removeCard };
