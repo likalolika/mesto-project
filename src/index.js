@@ -1,7 +1,23 @@
 import "./pages/index.css";
-import { addCard, likeBtn, removeCard } from "./components/card.js";
-import { openModal, closeModal } from "./components/modal.js";
-const elbrusImage = new URL(
+import {
+  addCard,
+  likeBtn,
+  removeCard,
+  cardsContainer,
+  cardsTemplate,
+  templateElem,
+} from "./components/card.js";
+import {
+  openModal,
+  closeModal,
+  closeModalOver,
+  closeOnOverlay,
+  handleEscClose,
+  popupShowImage,
+} from "./components/modal.js";
+
+import { initialCards } from "./components/cards.js";
+/*const elbrusImage = new URL(
   "./images/kirill-pershin-1404681-unsplash.png",
   import.meta.url
 );
@@ -69,11 +85,11 @@ const initialCards = [
     name: "Домбай",
     link: dombaiImage,
   },
-];
+];*/
 
-export const cardsContainer = document.querySelector(".grid-block");
-export const cardsTemplate = document.querySelector("#card-template").content;
-export const templateElem = cardsTemplate.querySelector(".card-template__elem");
+/*const cardsContainer = document.querySelector(".grid-block");
+ const cardsTemplate = document.querySelector("#card-template").content;
+ const templateElem = cardsTemplate.querySelector(".card-template__elem");*/
 
 function renderCard() {
   initialCards.forEach((item) => {
@@ -88,7 +104,7 @@ renderCard();
 
 const popupProfile = document.querySelector(".popup_profile-edit");
 const popupAddCard = document.querySelector(".popup_add-card");
-const popupShowImage = document.querySelector(".popup_show-image");
+/*const popupShowImage = document.querySelector(".popup_show-image");*/
 const addButton = document.querySelector(".profile__add-button");
 const editButton = document.querySelector(".profile__edit-button");
 const closeBtnProfile = popupProfile.querySelector(".popup__close-button");
@@ -99,7 +115,7 @@ const closeBtnImage = popupShowImage.querySelector(
   ".popup__close-button_show-image"
 );
 
-function closeModalOver(evt) {
+/*function closeModalOver(evt) {
   if (evt.target.classList.contains("popup")) {
     closeModal(evt.target);
   }
@@ -107,18 +123,18 @@ function closeModalOver(evt) {
 
 function closeOnOverlay(popup) {
   popup.addEventListener("click", closeModalOver);
-}
+}*/
 
 closeOnOverlay(popupProfile);
 closeOnOverlay(popupAddCard);
 closeOnOverlay(popupShowImage);
 
-export function esc(evt) {
+/*export function handleEscClose (evt) {
   if (evt.key === "Escape") {
     const modalIsOpen = document.querySelector(".popup_opened");
     modalIsOpen.classList.remove("popup_opened");
   }
-}
+}*/
 
 editButton.addEventListener("click", () => openModal(popupProfile));
 closeBtnProfile.addEventListener("click", () => closeModal(popupProfile));
@@ -137,6 +153,8 @@ const profileSaveBtn = document.querySelector(
   ".popup__save-button_profile-edit"
 );
 const form = document.querySelector(".popup__form_profile-edit");
+nameInput.value = profileTitle.textContent;
+jobInput.value = profileSub.textContent;
 
 function saveProfileForm(event) {
   event.preventDefault();
@@ -179,15 +197,15 @@ formElem.addEventListener("submit", (evt) => addCardButton(evt));
 
 /*показать картинку*/
 
-const img = document.querySelector(".popup__image");
+/*const img = document.querySelector(".popup__image");
 const imgTitle = document.querySelector(".popup__description");
 
-export function showImg(evt) {
+function showImg(evt) {
   openModal(popupShowImage);
 
   img.setAttribute("src", evt.target.src);
   imgTitle.textContent = evt.target.alt;
-}
+}*/
 
 /*Закрыть  картинку*/
 

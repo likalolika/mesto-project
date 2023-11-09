@@ -1,9 +1,8 @@
-import {
-  cardsContainer,
-  cardsTemplate,
-  templateElem,
-  showImg,
-} from "../index.js";
+import { showImg, img, imgTitle } from "./modal.js";
+
+export const cardsContainer = document.querySelector(".grid-block");
+export const cardsTemplate = document.querySelector("#card-template").content;
+export const templateElem = cardsTemplate.querySelector(".card-template__elem");
 
 function addCard(name, link, removeCard) {
   const templateElemCopy = templateElem.cloneNode(true);
